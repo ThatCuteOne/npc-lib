@@ -1,0 +1,2 @@
+execute store result storage npcv2:vars session_id int 1 run function npc-v2:internal/player/session/create_session/get_new_session_uid
+function npc-v2:internal/player/session/create_session/make_scoreboard with storage npcv2:vars

@@ -1,0 +1,1 @@
+$tellraw @a [{text:"[ERROR] ",color:red},"$(msg)"]

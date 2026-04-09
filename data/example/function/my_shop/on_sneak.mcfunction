@@ -1,0 +1,1 @@
+function npc-v2:api/player/leave_dialog

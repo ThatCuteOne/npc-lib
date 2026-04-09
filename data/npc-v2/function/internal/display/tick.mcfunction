@@ -1,0 +1,1 @@
+execute if entity @s[tag=npcv2.display.rotate] run function npc-v2:internal/display/rotate
