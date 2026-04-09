@@ -1,1 +1,0 @@
-function npc-v2:api/create_npc {type:"example_my_shop"}

@@ -1,8 +1,0 @@
-{
-    "pack": {
-        "pack_format": 7,
-        "description": "npc/dialog system v2",
-        "min_format": 20,
-        "max_format": 200
-    }
-}
