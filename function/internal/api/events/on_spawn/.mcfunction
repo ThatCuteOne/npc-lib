@@ -1,0 +1,1 @@
+$execute summon interaction at @s run function npc-v2:internal/api/events/on_spawn/as_interaction {type:"$(type)"}
