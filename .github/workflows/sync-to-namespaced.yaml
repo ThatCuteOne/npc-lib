@@ -18,13 +18,19 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      - name: Install git-filter-repo
+        run: |
+          pip install git-filter-repo
       - name: Copy files with history
         run: |
           # Create namespaced branch from main
-          git checkout -b namespaced main
+          git checkout -b temp-namespaced main
           
           # Use filter-repo to move files and preserve history
-          git filter-repo --path data/npc-v2/ --to-subdirectory-filter . --force
+          git filter-repo --subdirectory-filter data/npc-v2 --force
+
+          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           
           # Push the branch
-          git push origin namespaced --force
+          git push origin HEAD:namespaced --force
