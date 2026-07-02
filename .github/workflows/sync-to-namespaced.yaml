@@ -1,0 +1,53 @@
+name: Copy NPC-V2 Files to Namespaced Branch
+
+on:
+  workflow_dispatch:  # Manual trigger
+  push:
+    branches:
+      - main
+
+jobs:
+  copy-files:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Copy files from main branch to namespaced branch
+        run: |
+          # Fetch the namespaced branch if it exists, or create it
+          git fetch origin namespaced || git branch namespaced
+          
+          # Switch to namespaced branch
+          git checkout namespaced || git checkout -b namespaced
+          
+          # Checkout main branch to get the files we need
+          git checkout main -- data/npc-v2/
+          
+          # Copy all files from data/npc-v2 to root
+          cp -r data/npc-v2/* .
+          
+          # Remove the data/npc-v2 directory if it exists
+          rm -rf data/npc-v2
+          
+          # Stage all changes
+          git add -A
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          
+          # Commit changes
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git commit -m "Copy NPC-V2 files from main branch to root [skip ci]"
+          
+          # Push to namespaced branch
+          git push origin namespaced
