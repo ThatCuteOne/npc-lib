@@ -1,7 +1,7 @@
-name: Copy NPC-V2 Files to Namespaced Branch
+name: Sync to namespaced format branch
 
 on:
-  workflow_dispatch:  # Manual trigger
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -22,15 +22,10 @@ jobs:
       - name: Install git-filter-repo
         run: |
           pip install git-filter-repo
-      - name: Copy files with history
+      - name: Sync to branch
         run: |
-          # Create namespaced branch from main
           git checkout -b temp-namespaced main
-          
-          # Use filter-repo to move files and preserve history
           git filter-repo --subdirectory-filter data/npc-v2 --force
 
           git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          
-          # Push the branch
           git push origin HEAD:namespaced --force
