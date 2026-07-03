@@ -1,1 +1,0 @@
-return run execute store result score @s npcv2.sessions run scoreboard players add $session npcv2.sessions 1

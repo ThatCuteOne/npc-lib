@@ -1,1 +1,0 @@
-$scoreboard objectives add dialog.$(session_id) dummy

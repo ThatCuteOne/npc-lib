@@ -1,1 +1,0 @@
-$scoreboard objectives remove dialog.$(session_id)

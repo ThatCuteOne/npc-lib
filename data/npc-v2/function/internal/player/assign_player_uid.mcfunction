@@ -1,1 +1,0 @@
-return run execute store result score @s npcv2.player.ID run scoreboard players add $id npcv2.player.ID 1
