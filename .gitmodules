@@ -1,3 +1,4 @@
 [submodule "data/npc-v2"]
 	path = data/npc-v2
 	url = git@github.com:ThatCuteOne/npc-lib.git
+	branch = namespaced
