@@ -1,4 +1,4 @@
-tellraw @a "§1NPC System loaded"
+tellraw @a "§1NPC System loaded~"
 
 scoreboard objectives add npcv2.ID dummy
 scoreboard objectives add npcv2.player.talking_to dummy
