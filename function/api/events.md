@@ -18,6 +18,8 @@ npc-v2:events/$TYPE/$EVENT_TYPE
 - on_tick
 - on_jump
 - on_sneak
+- dialog/on_dialog_enter
+- dialog/on_dialog_exit
 
 
 # player events

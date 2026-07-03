@@ -1,3 +1,6 @@
+function npc-v2:internal/player/events/dialog/on_dialog_exit/
+scoreboard players reset @s npcv2.player.talking_to
+
 function npc-v2:internal/player/movement/unfreeze
 execute store result storage npcv2:vars session_id int 1 run scoreboard players get @s npcv2.sessions
 function npc-v2:internal/player/session/delete_scoreboard with storage npcv2:vars
