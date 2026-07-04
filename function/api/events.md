@@ -11,7 +11,7 @@ TODO DOCS
 
 register events for type under function tag:
 ```
-npc-v2:events/$TYPE/$EVENT_TYPE
+npc-registry:events/$TYPE/$EVENT_TYPE
 ```
 
 # Player event types
@@ -25,5 +25,5 @@ npc-v2:events/$TYPE/$EVENT_TYPE
 # player events
 register events for type under function tag:
 ```
-npc-v2:events/$TYPE/player/$EVENT_TYPE
+npc-registry:events/$TYPE/player/$EVENT_TYPE
 ```
